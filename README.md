@@ -1,3 +1,54 @@
+Poupées russes
+index.html qui va chercher index.js
+index.js relie rooot au composent App
+App.js avec sa div App
+
+babel convertit en js
+webpack
+
+Hook (fonction react ) et cycle de vie d'un composant (le composant est rendu on exécute du code)
+useeffect
+je veux executer du code juste après le premier rendu du composant Meal
+le code que je veux éxécuter est un appel vers une API
+pour récupérer des receettes de cuisine
+et les afficher dans mon composant Meal pour qu'elles soient affichées dans ma page
+
+
+
+ axios est un concurrent de fetch. Axios est un bundle. fetch renvoie la promesse (en cours/échec/succès). await on attend la promesse.
+
+Un composant c'est une fonction fléchée const en fait
+
+
+Axios installation
+npm install axios
+
+
+opérateur ternaire
+
+
+-> UseEffect
+
+interagir avec react 
+
+appelle une seule fois et c'est fini, la variable meal disparait parce qu'il n'y a pas de BD
+
+
+->UseState crée une "BD locale " et recherche automatiquement dc ça boucle à l'infini
+pour rerendre le composant, ça rend dynamique
+2 outils: 1 variable meal qui contient la valeur du state et une focntion setMeal qui permet de la modifier la valeur
+
+}, []); // mettre le tableau vide sinon ça tourne à l'infini
+
+le state c'est la valeur dans le cycle de vie 'rendu 1, rendu2 , rendu3, et détruit 
+
+ useState(); dans les () je peux mettre une valeur par défaut en gnl null ou false 
+
+
+ les props / enfants
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

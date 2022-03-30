@@ -1,0 +1,39 @@
+import React, { useEffect, useState } from 'react';
+
+const Meal = () => {
+
+const [meal, setMeal] = useState(null
+    //{
+    //strMeal: "Valeur par défaut ; Paté en croute, c'est très rapide"
+    //}
+);
+
+    useEffect(() => {
+        (async function () {
+            const url = "https://www.themealdb.com/api/json/v1/1/random.php";
+
+            const response = await fetch (url);
+
+            const mealsFromApi = await response.json();
+
+            setMeal(mealsFromApi.meals[0]);  //avec le state on a modifié cette ligne
+            
+            
+        })();
+    }, []); // mettre le tableau vide sinon ça tourne à l'infini
+
+    return (
+        <>
+        {meal ? (
+            <article>
+            <h2>{meal.strMeal}</h2>            
+        </article>
+        ) : (
+            <p>Pas de recette/// strMeal vient du tableau json. </p>
+        )}
+        
+        </>
+    );
+};
+
+export default Meal;
