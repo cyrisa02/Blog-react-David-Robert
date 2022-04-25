@@ -1,42 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Meal from './Meal';
-import  { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import React, { Component }  from 'react';
 
 const App = () => {
+    return (
+    <BrowserRouter>
+    <Routes> 
+        <Route path = "/" element={<Home/>} />
+        <Route path = "/categories/:category" element={<Home/>} />
 
-  const [meal, setMeal] = useState(null
-    //{
-    //strMeal: "Valeur par défaut ; Paté en croute, c'est très rapide"
-    //}
-);
-
-useEffect(() => {
-  (async function () {
-      const url = "https://www.themealdb.com/api/json/v1/1/random.php";
-
-      const response = await fetch (url);
-
-      const mealsFromApi = await response.json();
-
-      setMeal(mealsFromApi.meals[0]);  //avec le state on a modifié cette ligne
-      
-      
-  })();
-}, []); // mettre le tableau vide sinon ça tourne à l'infini
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Bonsoir aux étudiants!!!</p>
-      </header>
-      <Meal meal={meal}/>
-      
-      </div>
-    );
-
-
+        </Routes>
+        </BrowserRouter>
+        )
 }
 
 export default App;

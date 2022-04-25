@@ -45,7 +45,73 @@ le state c'est la valeur dans le cycle de vie 'rendu 1, rendu2 , rendu3, et dét
  useState(); dans les () je peux mettre une valeur par défaut en gnl null ou false 
 
 
- les props / enfants
+ les props <=> parents/ enfants, les dumbs fichiers
+
+
+ -------------------
+composant menu
+
+map c'est mieux qu'un foreach, mais il lui faut une key qu'on récupère dans le json (c'est comme la clé primaire, pour nous c''est idMeal)
+
+au click sur un li, pour le nav c'est essentiel, en focntion du clic ça fait un apple d'apI ET DONC MODIFIER LE RENDU  et le comosant react
+
+on submit, pour un formulaire
+
+les props {} vont du parent vers l'enfant et pas le contraire. Par contre quand on clique sur le menu c'est "le contraire" donc problème, ce sont des composants frères Meals et Meal=> get....ByCategory
+
+créer une fonction définie dans le parent (App) getMealsByCategory + modifier <Menu getMealsByCategory={getMealsByCategory}/>
+dans l'enfant c'est devenu un paramètre 
+
+Arbre
+App > Menu 
+App > Meals > Meal   > c'est une props {}
+
+Meals a besoin du clic sur Menu pour créer Meal. Menu et Meals sont sur le même niveau dans l'arbre. Il n'y a pas de relation entre frère et l'info du clic/submit ne peut pas remonter vers le parents App (uniquement les propos {}). Donc on crée une fonction dans le parent que menu déclenche au clic.
+
+Problème du props drilling in react js
+useContext évite la relation parent enfant dans des composants, on utilise pas useeffect et usestate. On partage
+au dessus c'est redux.
+
+
+Hooks
+UseEffect permet d'exécuter du code après le 1er rechargement d'un composant
+UseState crée des variables dont la valeur est "stockée" après un rechargement/modif . Après un rechargement les variables sont perdues pas avec UseState.
+{} les props -> du parent vers l'enfant pas possible frère-frère, ça doit passer par le parent, pas possible enfant - parent (créer une fonction get...By)
+
+SPA - Single Page Application 
+-> React Router version 6
+
+npm add react-router-dom@6
+
+pour gérer les version de npm -> utiliser nvm 
+nvm install verion.number
+
+créer un dossier pages
+        <Route path = "/categories/:category" element={<Home/>} />
+les : siginfie que ça peut bouger , varier
+
+créer un dossier components 
+ utiliser les link , useParams (le passgae des props se fait dans l'url)
+
+next.js
+référencement pbm avec react, les moteurs de google ne voient rien
+
+
+
+
+
+
+
+
+
+ ----- Question !!!!
+
+
+Pourra-t-on voir le build et le déploiement sur Heroku de l'application? Est-ce que une fois le build réalisé, l'application déployée sur Heroku, on peut toujours la modifier? Et si oui, comment?
+
+
+Typescript et JS c'est quoi la différence, c'est quoi Typescript?
+ 
 
 
 
